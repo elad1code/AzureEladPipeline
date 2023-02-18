@@ -1,0 +1,25 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  azureSubscription: 'MyAzureSubscription'
+  resourceGroupName: 'MyResourceGroup'
+  location: 'eastus'
+  storageAccountName: 'mystorageaccount'
+  serverName: 'myserver'
+  adminLogin: 'myadminlogin'
+  adminPassword: 'mysecretpassword'
+
+steps:
+- task: AzureResourceGroupDeployment@2
+  inputs:
+    azureSubscription: $(azureSubscription)
+    resourceGroupName: $(resourceGroupName)
+    location: $(location)
+    templateLocation: 'Linked artifact'
+    csmFile: 'arm-template.json'
+    csmParametersFile: 'arm-template.parameters.json'
+    overrideParameters: '-storageAccountName $(storageAccountName) -serverName $(serverName) -adminLogin $(adminLogin) -adminPassword $(adminPassword)'
