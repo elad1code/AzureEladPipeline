@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_vNet_name": {
+            "value": null
+        },
+        "virtualMachines_simpleLinuxVM_name": {
+            "value": null
+        },
+        "networkSecurityGroups_SecGroupNet_name": {
+            "value": null
+        },
+        "storageAccounts_storedhtml67jakkfc_name": {
+            "value": null
+        },
+        "storageAccounts_elad1storageaccount_name": {
+            "value": null
+        },
+        "storageAccounts_elad2storageaccount_name": {
+            "value": null
+        },
+        "networkInterfaces_simpleLinuxVMNetInt_name": {
+            "value": null
+        },
+        "publicIPAddresses_simpleLinuxVMPublicIP_name": {
+            "value": null
+        }
+    }
+}
