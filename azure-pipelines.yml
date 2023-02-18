@@ -10,8 +10,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure subscription 1(1)(f3fa8166-6758-4763-8ab5-f2c562b4974f)'
+    subscriptionId: 'f3fa8166-6758-4763-8ab5-f2c562b4974f'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'EladResourceGroup'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://github.com/elad1code/AzureEladPipeline.git'
+    deploymentMode: 'Incremental'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
